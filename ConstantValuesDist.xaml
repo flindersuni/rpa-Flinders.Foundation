@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap2010:Annotation.AnnotationText>UPTF00000168eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiUHVibGljIHZlcnNpb24gb2YgdGhlIENvbnN0YW50VmFsdWVzIHdvcmtmbG93Llx1MDAwZFx1MDAwYVx1MDAwZFx1MDAwYU1ha2UgYSBjb3B5IG9mIHdvcmtmbG93IGFzICdDb25zdGFudFZhbHVlcycgYW5kIGFzc2lnbiBhcHByb3ByaWF0ZSB2YWx1ZXMgdG8gdGhlIGRlZmluZWQgYXJndW1lbnRzLiIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
+  <sap2010:Annotation.AnnotationText>UPTF000001C0eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvQ29uc3RhbnRWYWx1ZXMiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiUHVibGljIHZlcnNpb24gb2YgdGhlIENvbnN0YW50VmFsdWVzIHdvcmtmbG93Llx1MDAwYVx1MDAwYU1ha2UgYSBjb3B5IG9mIHdvcmtmbG93IGFzICdDb25zdGFudFZhbHVlcycgYW5kIGFzc2lnbiBhcHByb3ByaWF0ZSB2YWx1ZXMgdG8gdGhlIGRlZmluZWQgYXJndW1lbnRzLiIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>304,466</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -56,7 +56,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Public version of the ConstantValues workflow.&#xD;&#xA;&#xD;&#xA;Make a copy of workflow as 'ConstantValues' and assign appropriate values to the defined arguments." DisplayName="ConstantValues" sap:VirtualizedContainerService.HintSize="264,386" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Public version of the ConstantValues workflow.&#xA;&#xA;Make a copy of workflow as 'ConstantValues' and assign appropriate values to the defined arguments." DisplayName="ConstantValues" sap:VirtualizedContainerService.HintSize="264,386" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
