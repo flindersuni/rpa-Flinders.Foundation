@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>904,2130</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>705,1392</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExecuteTestCases_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -63,9 +63,6 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="rpaEnvironment" />
       <Variable x:TypeArguments="sd:DataTable" Name="filteredDataTable" />
-      <Variable x:TypeArguments="x:String" Name="svnArgumentsToLockFile" />
-      <Variable x:TypeArguments="x:String" Name="svnArgumentsToUnlockFile" />
-      <Variable x:TypeArguments="x:String" Default="[String.Format(&quot;&quot;&quot;{0}&quot;&quot;&quot;, Path.Combine(Environment.GetEnvironmentVariable(&quot;ProgramW6432&quot;), &quot;TortoiseSVN\bin\svn.exe&quot;))]" Name="pathToSvnExecutable" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
