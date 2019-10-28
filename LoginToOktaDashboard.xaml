@@ -63,7 +63,7 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="Login to Flinders Dashboard (Okta)&#xA;&#xA;This activity will login to the Flinders Dashboard (Okta) using the username and password that is stored in the found credential." DisplayName="LoginToOktaDashboard" sap:VirtualizedContainerService.HintSize="654,1341" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="A flag indicating if the specific credential was found." Default="False" Name="isValidCredential" />
+      <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="A flag indicating if the specific credential was found." Name="isValidCredential" />
       <Variable x:TypeArguments="ui:Browser" sap2010:Annotation.AnnotationText="A reference to the browser window that was opened to use for the login atttempt. " Name="openBrowser" />
       <Variable x:TypeArguments="ss:SecureString" sap2010:Annotation.AnnotationText="The password used to authenticate that is extacted from the Windows Credential" Name="password" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The URL to the Okta login page that will be used for the login attempt. " Name="url" />
@@ -93,7 +93,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,262.5 300,286</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Initialise variables and format arguments prior to process execution" DisplayName="Initialise Process" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence sap2010:Annotation.AnnotationText="Initialise variables and format arguments prior to process execution" DisplayName="Initialise Process" sap:VirtualizedContainerService.HintSize="336,694" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -119,6 +119,19 @@
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:String">[Environment.ToLower]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="Set the default value for the valid credential check" sap:VirtualizedContainerService.HintSize="314,102" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[isValidCredential]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
