@@ -6,7 +6,7 @@
     <x:Null />
   </mva:VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000370eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvRGV0ZWN0RW52aXJvbm1lbnQiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiRGV0ZWN0IFJQQSBFbnZpcm9ubWVudFx1MDAwYVx1MDAwYVRoaXMgYWN0aXZpdHkgZGV0ZXJtaW5lcyB0aGUgUlBBIGVudmlyb25tZW50IGluIGEgZGV0ZXJtaW5pc3RpYyBhbmQgcmVwZWF0YWJsZSB3YXkuIFRoZSBSUEEgZW52aXJvbm1lbnQgd2lsbCBiZSBvbmUgb2YgdGhlIGZvbGxvd2luZywgZGVwZW5kaW5nIG9uIHdoZXJlIHRoZSBib3QgaXMgcnVubmluZywgZGV2ZWxvcG1lbnQsIHRlc3Qgb3IgcHJvZHVjdGlvbi5cdTAwMGFcdTAwMGFUaGUgdmFsdWUgb2YgdGhlIGBSUEFFbnZpcm9ubWVudGAgZW52aXJvbm1lbnQgdmFyaWFibGUsIGlmIHByZXNlbnQgYW5kIHZhbGlkLCBpcyB1c2VkIGJ5IHRoaXMgYWN0aXZpdHkuIFx1MDAwYVx1MDAwYUlmIHRoZSBlbnZpcm9ubWVudCB2YXJpYWJsZSBpcyBub3QgcHJlc2VudCBvciBpcyBpbnZhbGlkLCB0aGUgZGVmYXVsdCBlbnZpcm9ubWVudCBvZiAnZGV2ZWxvcG1lbnQnIGlzIHJldHVybmVkLiIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>921,1868</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>921,1771</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DetectEnvironment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -55,10 +55,9 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Detect RPA Environment&#xA;&#xA;This activity determines the RPA environment in a deterministic and repeatable way. The RPA environment will be one of the following, depending on where the bot is running, development, test or production.&#xA;&#xA;The value of the `RPAEnvironment` environment variable, if present and valid, is used by this activity. &#xA;&#xA;If the environment variable is not present or is invalid, the default environment of 'development' is returned." DisplayName="DetectEnvironment" sap:VirtualizedContainerService.HintSize="881,1788" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Detect RPA Environment&#xA;&#xA;This activity determines the RPA environment in a deterministic and repeatable way. The RPA environment will be one of the following, depending on where the bot is running, development, test or production.&#xA;&#xA;The value of the `RPAEnvironment` environment variable, if present and valid, is used by this activity. &#xA;&#xA;If the environment variable is not present or is invalid, the default environment of 'development' is returned." DisplayName="DetectEnvironment" sap:VirtualizedContainerService.HintSize="881,1691" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The value of the 'RPAEnvironment' environment variable." Name="rpaEnvironment" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="If the 'RPAEnvironment' variable is not present or does not contain an expected value this variable is returned." Name="defaultEnvironment" />
@@ -89,7 +88,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If sap2010:Annotation.AnnotationText="Was the environment variable found?" Condition="[Information.IsNothing(rpaEnvironment)]" sap:VirtualizedContainerService.HintSize="859,1118" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Was the environment variable found?" Condition="[Information.IsNothing(rpaEnvironment)]" sap:VirtualizedContainerService.HintSize="859,1021" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -115,39 +114,33 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="498,943" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap2010:Annotation.AnnotationText="Yes, validate the value" sap:VirtualizedContainerService.HintSize="498,846" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Yes, validate the value" sap:VirtualizedContainerService.HintSize="476,238" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Assign sap2010:Annotation.AnnotationText="Reformat the value, prior to validation" sap:VirtualizedContainerService.HintSize="476,87" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[rpaEnvironment]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[rpaEnvironment.Trim().ToLower()]</InArgument>
+            </Assign.Value>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap2010:Annotation.AnnotationText="Reformat the value, prior to validation" sap:VirtualizedContainerService.HintSize="242,87" sap2010:WorkflowViewState.IdRef="Assign_2">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[rpaEnvironment]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[rpaEnvironment.Trim().ToLower()]</InArgument>
-              </Assign.Value>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Assign>
-          </Sequence>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[rpaEnvironment]" sap:VirtualizedContainerService.HintSize="476,541" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          </Assign>
+          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[rpaEnvironment]" sap:VirtualizedContainerService.HintSize="476,568" sap2010:WorkflowViewState.IdRef="Switch`1_1">
             <Switch.Default>
-              <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap2010:Annotation.AnnotationText="Log a messae and return the default environment type." sap:VirtualizedContainerService.HintSize="336,342" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[String.Format(&quot;Invalid RPAEnvironment variable value '{1}' detected, using the default value '{0}'&quot;, defaultEnvironment, rpaEnvironment)]" />
