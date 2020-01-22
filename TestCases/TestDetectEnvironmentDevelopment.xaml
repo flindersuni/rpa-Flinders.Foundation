@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>654,743</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,723</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,14 +59,14 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Test the DetectEnvironment activity on development environments" DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="614,663" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+  <Flowchart sap2010:Annotation.AnnotationText="Test the DetectEnvironment activity on development environments" DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="634,663" sap2010:WorkflowViewState.IdRef="Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The actual environment name that was detected" Name="detectedEnvironment" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The environment name that is expected to be returned" Default="test" Name="expectedEnvironment" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The environment name that is expected to be returned" Default="development" Name="expectedEnvironment" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144</av:PointCollection>
@@ -83,7 +83,7 @@
           <av:Size x:Key="ShapeSize">200,93</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="Undertake the steps necessary to run this test" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,358" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch sap2010:Annotation.AnnotationText="Undertake the steps necessary to run this test" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="714,1443" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -91,23 +91,23 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence sap2010:Annotation.AnnotationText="Initialise and run the test" sap:VirtualizedContainerService.HintSize="222,347" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="Initialise and run the test" sap:VirtualizedContainerService.HintSize="676,1145" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="Initialise test Parameters" DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence sap2010:Annotation.AnnotationText="Initialise test Parameters" DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="634,293" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Initialise Resources and Data Parameters that you will test with in here" />
-              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <ui:Comment sap:VirtualizedContainerService.HintSize="334,74" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Initialise Resources and Data Parameters that you will test with in here" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[TestResult]</OutArgument>
                 </Assign.To>
@@ -116,15 +116,16 @@
                 </Assign.Value>
               </Assign>
             </Sequence>
-            <Flowchart sap2010:Annotation.AnnotationText="Execute Test Logic" DisplayName="Flowchart " sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+            <Flowchart sap2010:Annotation.AnnotationText="Execute Test Logic" DisplayName="Flowchart " sap:VirtualizedContainerService.HintSize="634,693" sap2010:WorkflowViewState.IdRef="Flowchart_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                   <av:Size x:Key="ShapeSize">60,75</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,124.5</av:PointCollection>
                   <x:Double x:Key="Height">630</x:Double>
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Flowchart.StartNode>
@@ -157,8 +158,8 @@
                         <av:Point x:Key="ShapeLocation">260.5,276.5</av:Point>
                         <av:Size x:Key="ShapeSize">147,159</av:Size>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <av:PointCollection x:Key="TrueConnector">260.5,356 130,356 130,460</av:PointCollection>
-                        <av:PointCollection x:Key="FalseConnector">407.5,356 450,356 450,460</av:PointCollection>
+                        <av:PointCollection x:Key="TrueConnector">260.5,356 140,356 140,460</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">407.5,356 460,356 460,460</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
@@ -166,11 +167,11 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">9,460</av:Point>
-                            <av:Size x:Key="ShapeSize">242,60</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">130,520 130,560</av:PointCollection>
+                            <av:Size x:Key="ShapeSize">262,60</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">140,520 140,560</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[TestResult]</OutArgument>
                           </Assign.To>
@@ -188,10 +189,10 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">9,560</av:Point>
-                                <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                <av:Size x:Key="ShapeSize">262,60</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[TestMessage]</OutArgument>
                               </Assign.To>
@@ -213,11 +214,11 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">329,460</av:Point>
-                            <av:Size x:Key="ShapeSize">242,60</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">450,520 450,560</av:PointCollection>
+                            <av:Size x:Key="ShapeSize">262,60</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">460,520 460,560</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[TestResult]</OutArgument>
                           </Assign.To>
@@ -235,10 +236,10 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">329,560</av:Point>
-                                <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                <av:Size x:Key="ShapeSize">262,60</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[TestMessage]</OutArgument>
                               </Assign.To>
@@ -267,7 +268,7 @@
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="680,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -278,14 +279,14 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap2010:Annotation.AnnotationText="Unexpected eceptions are caught here. Such exceptions indicate a test failure.&#xA;&#xA;Known exceptions must be of a more specific type, and be explicitly checked in tests designed to fail. " sap:VirtualizedContainerService.HintSize="264,386" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap2010:Annotation.AnnotationText="Unexpected eceptions are caught here. Such exceptions indicate a test failure.&#xA;&#xA;Known exceptions must be of a more specific type, and be explicitly checked in tests designed to fail. " sap:VirtualizedContainerService.HintSize="284,354" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[TestMessage]</OutArgument>
                   </Assign.To>
@@ -304,7 +305,7 @@
               </Sequence>
             </ActivityAction>
           </Catch>
-          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="680,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -315,7 +316,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap2010:Annotation.AnnotationText="Catch exceptions thrown by the activity being tests related to the tasks it undertakes. &#xA;&#xA;In normal tests, excluding those specifically testing for this type of exception, this would indicate a test failure" sap:VirtualizedContainerService.HintSize="264,416" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence sap2010:Annotation.AnnotationText="Catch exceptions thrown by the activity being tests related to the tasks it undertakes. &#xA;&#xA;In normal tests, excluding those specifically testing for this type of exception, this would indicate a test failure" sap:VirtualizedContainerService.HintSize="284,354" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -341,7 +342,7 @@
               </Sequence>
             </ActivityAction>
           </Catch>
-          <Catch x:TypeArguments="sc:ConfigurationException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <Catch x:TypeArguments="sc:ConfigurationException" sap:VirtualizedContainerService.HintSize="680,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -352,7 +353,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sc:ConfigurationException" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap2010:Annotation.AnnotationText="Catch exceptions thrown by the activity being tests related to the tasks it undertakes. &#xA;&#xA;In normal tests, excluding those specifically testing for this type of exception, this would indicate a test failure" sap:VirtualizedContainerService.HintSize="264,416" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap2010:Annotation.AnnotationText="Catch exceptions thrown by the activity being tests related to the tasks it undertakes. &#xA;&#xA;In normal tests, excluding those specifically testing for this type of exception, this would indicate a test failure" sap:VirtualizedContainerService.HintSize="284,354" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
