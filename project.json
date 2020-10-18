@@ -3,17 +3,19 @@
   "description": "A library of foundational activities used across all UiPath projects at Flinders University",
   "main": "InvokeTestSuite.xaml",
   "dependencies": {
-    "Flinders.Foundation.Testing": "1.0.4",
-    "UiPath.Credentials.Activities": "1.1.6479.13204",
-    "UiPath.Excel.Activities": "2.7.2",
-    "UiPath.Mail.Activities": "1.7.2",
-    "UiPath.System.Activities": "19.10.1",
-    "UiPath.UIAutomation.Activities": "19.11.1"
+    "Flinders.Foundation.Testing": "[1.0.10]",
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
+    "UiPath.Excel.Activities": "[2.7.2]",
+    "UiPath.Mail.Activities": "[1.7.2]",
+    "UiPath.System.Activities": "[19.10.1]",
+    "UiPath.Testing.Activities": "1.2.4",
+    "UiPath.UIAutomation.Activities": "[19.11.1]"
   },
   "webServices": [],
+  "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.6",
+  "projectVersion": "2.0.20",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -23,7 +25,9 @@
       "Private:*",
       "*password*"
     ],
-    "executionType": "Workflow"
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -55,7 +59,40 @@
         "ConstantValuesDist.xaml"
       ]
     },
-    "fileInfos": []
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "2d8739f6-a138-4695-8698-eb67c8c21122",
+        "fileName": "TestDetectEnvironmentDevelopment.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "42adf1cd-edd3-4e80-8628-d0d84d96f2cb",
+        "fileName": "TestDetectEnvironmentProduction.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "f4cbc293-c753-42ee-84bc-c51f3fcc5734",
+        "fileName": "TestDetectEnvironmentTest.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "02a1724c-ae5c-4f78-88b5-3c2031cd3c55",
+        "fileName": "TestDetectEnvironmentInvalidName.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "055aa5c9-cae5-4525-ad0b-0b28ec68e7b7",
+        "fileName": "TestDetectEnvironmentInvalidValue.xaml"
+      }
+    ],
+    "modernBehavior": false
   },
-  "expressionLanguage": "VisualBasic"
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
 }
