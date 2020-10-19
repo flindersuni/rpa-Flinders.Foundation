@@ -6,7 +6,7 @@
     <x:Null />
   </mva:VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF0000015CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvR2V0Q29tbW9uRGF0YURpcmVjdG9yeSIsIjxJbml0aWFsVG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJEZXRlcm1pbmUgdGhlIGNvbW1vbiBkYXRhIGRpcmVjdG9yeSBmb3IgdXNlIGJ5IGFsbCBGbGluZGVycyBSUEEgcHJvamVjdHMuICIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>737,1518</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1112,1551</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,9 +53,11 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Determine the common data directory for use by all Flinders RPA projects. " DisplayName="GetCommonDataDirectory" sap:VirtualizedContainerService.HintSize="697,1438" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Determine the common data directory for use by all Flinders RPA projects. " DisplayName="GetCommonDataDirectory" sap:VirtualizedContainerService.HintSize="797,1386" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Store the path to the common data directory" Name="rpaCommonDataDir" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Store the dectect RPA environment" Name="rpaEnvironment" />
@@ -67,9 +69,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Detect which environment is being used" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="675,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DetectEnvironment.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Detect which environment is being used" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="755,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DetectEnvironment.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="DetectedEnvironment">[rpaEnvironment]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="DetectedEnvironment">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="rpaEnvironment" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="ValidEnvironmentName" />
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="ValidEnvironmentValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="RpaEnvironmentName" />
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -77,21 +84,21 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="Is this a development environment" Condition="[rpaEnvironment.Equals(&quot;development&quot;) = True]" sap:VirtualizedContainerService.HintSize="675,544" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Is this a development environment" Condition="[rpaEnvironment.Equals(&quot;development&quot;) = True]" sap:VirtualizedContainerService.HintSize="755,516" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap2010:Annotation.AnnotationText="Return the default path to the UiPath folder in the &quot;MyDocuments&quot; directory" sap:VirtualizedContainerService.HintSize="336,369" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap2010:Annotation.AnnotationText="Return the default path to the UiPath folder in the &quot;MyDocuments&quot; directory" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[rpaCommonDataDir]" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[rpaCommonDataDir]" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
           <Assign sap2010:Annotation.AnnotationText="Add the standard 'UiPath' folder to the 'MyDocuments' path" sap:VirtualizedContainerService.HintSize="314,102" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[rpaCommonDataDir]</OutArgument>
@@ -108,7 +115,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <ui:GetEnvironmentVariable sap2010:Annotation.AnnotationText="Get the environment variable that specifies the common data directory" DisplayName="Get Environment Variable" sap:VirtualizedContainerService.HintSize="314,101" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="RPACommonDataDir" VariableValue="[rpaCommonDataDir]">
+        <ui:GetEnvironmentVariable sap2010:Annotation.AnnotationText="Get the environment variable that specifies the common data directory" DisplayName="Get Environment Variable" sap:VirtualizedContainerService.HintSize="334,101" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="RPACommonDataDir" VariableValue="[rpaCommonDataDir]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
