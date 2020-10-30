@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.22",
+  "projectVersion": "2.0.25",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -89,9 +89,9 @@
         "fileName": "TestDetectEnvironmentInvalidValue.xaml"
       },
       {
-        "editingStatus": "InProgress",
-        "testCaseId": "35ea964b-f997-470b-8f22-449cf693675c",
-        "fileName": "TestLoginToOktaDashboard.xaml"
+        "editingStatus": "Publishable",
+        "testCaseId": "35a20bd1-9d51-4608-ac25-823cc1b8a399",
+        "fileName": "TestGetCommonDataDirectory.xaml"
       }
     ],
     "modernBehavior": false
