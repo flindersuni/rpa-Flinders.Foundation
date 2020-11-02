@@ -92,6 +92,11 @@
         "editingStatus": "Publishable",
         "testCaseId": "35a20bd1-9d51-4608-ac25-823cc1b8a399",
         "fileName": "TestGetCommonDataDirectory.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e3a2dfb4-2239-4d22-8e6f-1caecaeaaab7",
+        "fileName": "TestTakeAndSaveScreenshot.xaml"
       }
     ],
     "modernBehavior": false
