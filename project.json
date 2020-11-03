@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.25",
+  "projectVersion": "2.0.26",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -94,9 +94,14 @@
         "fileName": "TestGetCommonDataDirectory.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "e3a2dfb4-2239-4d22-8e6f-1caecaeaaab7",
         "fileName": "TestTakeAndSaveScreenshot.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "106175f5-2978-4e05-bdf1-a3a1643d805e",
+        "fileName": "TestThrowBusinessRuleException.xaml"
       }
     ],
     "modernBehavior": false
