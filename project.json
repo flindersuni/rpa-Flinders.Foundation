@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.27",
+  "projectVersion": "2.0.28",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -107,6 +107,11 @@
         "editingStatus": "Publishable",
         "testCaseId": "efc6717d-5b6a-4dd5-a03e-2c8f2d1daee2",
         "fileName": "TestThrowBusinessRuleExceptionWithScreenshot.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "3b0624e0-2da6-437d-9149-7d0b12ac0138",
+        "fileName": "TestThrowConfigurationException.xaml"
       }
     ],
     "modernBehavior": false
