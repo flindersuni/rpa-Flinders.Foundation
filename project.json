@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.28",
+  "projectVersion": "2.0.29",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -112,6 +112,11 @@
         "editingStatus": "Publishable",
         "testCaseId": "3b0624e0-2da6-437d-9149-7d0b12ac0138",
         "fileName": "TestThrowConfigurationException.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7e800b62-2b69-4c2b-b3b7-ac5d6126084f",
+        "fileName": "TestThrowNotImplementedException.xaml"
       }
     ],
     "modernBehavior": false
