@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.33",
+  "projectVersion": "2.0.34",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -132,6 +132,11 @@
         "editingStatus": "Publishable",
         "testCaseId": "4a871bea-66b3-415e-abdb-4a08ba766c72",
         "fileName": "TestLoginToOktaDashboardInvalidEnvironment.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "429a4ab6-268b-47c7-b389-6c97c736557a",
+        "fileName": "TestLoginToOktaDashboardValidCredential.xaml"
       }
     ],
     "modernBehavior": false
