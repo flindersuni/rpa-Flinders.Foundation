@@ -10,10 +10,10 @@
     <x:Null />
   </mva:VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF000001E0eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvTG9naW5Ub09rdGFEYXNoYm9hcmQiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiTG9naW4gdG8gRmxpbmRlcnMgRGFzaGJvYXJkIChPa3RhKVx1MDAwYVx1MDAwYVRoaXMgYWN0aXZpdHkgd2lsbCBsb2dpbiB0byB0aGUgRmxpbmRlcnMgRGFzaGJvYXJkIChPa3RhKSB1c2luZyB0aGUgdXNlcm5hbWUgYW5kIHBhc3N3b3JkIHRoYXQgaXMgc3RvcmVkIGluIHRoZSBmb3VuZCBjcmVkZW50aWFsLiIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1752,4582</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1752,6129</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LoginToOktaDashboardRevised_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="48">
+    <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -67,7 +67,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Login to Flinders Dashboard (Okta)&#xA;&#xA;This activity will login to the Flinders Dashboard (Okta) using the username and password that is stored in the found credential." DisplayName="LoginToOktaDashboard" sap:VirtualizedContainerService.HintSize="556,4417" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Login to Flinders Dashboard (Okta)&#xA;&#xA;This activity will login to the Flinders Dashboard (Okta) using the username and password that is stored in the found credential." DisplayName="LoginToOktaDashboard" sap:VirtualizedContainerService.HintSize="552,6401" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="A flag indicating if the specific credential was found." Name="isValidCredential" />
       <Variable x:TypeArguments="ui:Browser" sap2010:Annotation.AnnotationText="A reference to the browser window that was opened to use for the login atttempt. " Name="openBrowser" />
@@ -76,6 +76,15 @@
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="A constant representing the URL to the login page in the production Okta environment. " Name="urlProduction" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="A constant representing the URL to the login page in the test Okta environment. " Name="urlTest" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The username used to authenticate that is extacted from the Windows Credential" Name="username" />
+      <Variable x:TypeArguments="x:String" Name="errorInvalidEnvironment" />
+      <Variable x:TypeArguments="x:String" Name="assetTest" />
+      <Variable x:TypeArguments="x:String" Name="assetProduction" />
+      <Variable x:TypeArguments="x:String" Name="errorInvalidCredentialAsset" />
+      <Variable x:TypeArguments="x:String" Name="errorUnableToEnterUsername" />
+      <Variable x:TypeArguments="x:String" Name="errorUnableToClickNext" />
+      <Variable x:TypeArguments="x:String" Name="errorUnableToEnterPassword" />
+      <Variable x:TypeArguments="x:String" Name="errorUnableToClickVerify" />
+      <Variable x:TypeArguments="x:String" Name="errorUnableToFindApps" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -83,11 +92,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Initialise variables and format arguments prior to process execution" DisplayName="Initialise Process" sap:VirtualizedContainerService.HintSize="514,742" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="assetProduction" />
-        <Variable x:TypeArguments="x:String" Name="assetTest" />
-      </Sequence.Variables>
+    <Sequence sap2010:Annotation.AnnotationText="Initialise variables and format arguments prior to process execution" DisplayName="Initialise Process" sap:VirtualizedContainerService.HintSize="510,959" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -95,9 +100,9 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,222" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,439" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:Boolean">[ProcessSuccessful]</OutArgument>
@@ -138,6 +143,62 @@
                 <InArgument x:TypeArguments="x:String">OktaUrlTest</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorInvalidEnvironment]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">["The specified environment '" + Environment + "' is invalid"]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorInvalidCredentialAsset]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">Loading the credential failed. Details: </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorUnableToEnterUsername]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">Unable to locate FAN text field</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorUnableToClickNext]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">Unable to click the 'Next' button</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorUnableToEnterPassword]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">Unable to locate password text field</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorUnableToClickVerify]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">Unable to locate Verify button</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[errorUnableToFindApps]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[String.Format("Login attempt using '{0}' credential failed. See screenshot for more information.", CredentialName)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
@@ -154,11 +215,13 @@
       </ui:GetRobotAsset>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[String.Format( &quot;Determining Okta test URL: test URL '{0}' obtained from Orchestrator asset '{1}'&quot;, urlTest, assetTest)]" />
     </Sequence>
-    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Validate the Environment argument, to determine the URL to use to access Okta" DisplayName="Switch" Expression="[Environment]" sap:VirtualizedContainerService.HintSize="514,191" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Validate the Environment argument, to determine the URL to use to access Okta" DisplayName="Switch" Expression="[Environment]" sap:VirtualizedContainerService.HintSize="510,322" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ThrowNotImplementedException.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="Message">["The specified environment '" + Environment + "' is invalid"]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Message">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorInvalidEnvironment" />
+            </InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Switch.Default>
@@ -184,8 +247,8 @@
         </Assign.Value>
       </Assign>
     </Switch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[String.Format( &quot;Determining Okta environment: environment '{0}' in use, using '{0}' URL '{1}'&quot;, Environment, url)]" />
-    <TryCatch sap2010:Annotation.AnnotationText="Try to get the specified credential" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,214" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[String.Format( &quot;Determining Okta environment: environment '{0}' in use, using '{0}' URL '{1}'&quot;, Environment, url)]" />
+    <TryCatch sap2010:Annotation.AnnotationText="Try to get the specified credential" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510,776" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -238,10 +301,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,583" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -260,7 +323,9 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[exception]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Throw a ConfigurationException" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ThrowConfigurationException.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="Message">[String.Format("Loading the credential failed. Details: {0}", exception.Message)]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Message">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorInvalidCredentialAsset + exception.Message" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -274,13 +339,13 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" sap2010:Annotation.AnnotationText="Open the Okta login page and log on using the provided credentials." BrowserType="IE" ContinueOnError="False" DisplayName="OpenBrowser" Hidden="False" sap:VirtualizedContainerService.HintSize="514,1939" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[openBrowser]" Url="[Url]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" sap2010:Annotation.AnnotationText="Open the Okta login page and log on using the provided credentials." BrowserType="IE" ContinueOnError="False" DisplayName="OpenBrowser" Hidden="False" sap:VirtualizedContainerService.HintSize="510,3013" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[openBrowser]" Url="[Url]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Undertake the steps ncessary to login to the Flinders Dashboard (Okta)" DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1809" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Undertake the steps ncessary to login to the Flinders Dashboard (Okta)" DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,2883" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -294,7 +359,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MaximizeWindow>
-            <TryCatch sap2010:Annotation.AnnotationText="Try to enter the FAN into the Okta username text field." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,214" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch sap2010:Annotation.AnnotationText="Try to enter the FAN into the Okta username text field." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,572" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -320,10 +385,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,379" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -337,11 +402,15 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[String.Format( &quot;Attempting to enter Okta username: unable to enter FAN '{0}'&quot;, Username )]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[String.Format(&quot;Attempting to enter Okta username: unable to enter FAN '{0}'&quot;, username)]" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ThrowBusinessRuleException.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="Message">Unable to locate FAN text field</InArgument>
-                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">False</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Message">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToEnterUsername" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">
+                            <Literal x:TypeArguments="x:Boolean" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -349,14 +418,14 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch sap2010:Annotation.AnnotationText="Try to click the 'Next' button to log on with thet supplied username/FAN." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,214" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+            <TryCatch sap2010:Annotation.AnnotationText="Try to click the 'Next' button to log on with thet supplied username/FAN." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,572" sap2010:WorkflowViewState.IdRef="TryCatch_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,360" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -393,10 +462,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,379" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -413,8 +482,12 @@
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[String.Format( &quot;Attempting to log onto Okta with username: unable to click 'Next' button&quot; )]" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="ThrowBusinessRuleException.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="Message">Unable to click the 'Next' button</InArgument>
-                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">False</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Message">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToClickNext" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">
+                            <Literal x:TypeArguments="x:Boolean" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -422,7 +495,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch sap2010:Annotation.AnnotationText="Try to enter the Password into the Okta password text field." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,214" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch sap2010:Annotation.AnnotationText="Try to enter the Password into the Okta password text field." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,572" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -448,10 +521,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,379" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -468,8 +541,12 @@
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Trace" Message="[String.Format( &quot;Attempting to enter Okta password: unable to enter password&quot; )]" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ThrowBusinessRuleException.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="Message">Unable to locate password text field</InArgument>
-                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">False</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Message">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToEnterPassword" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">
+                            <Literal x:TypeArguments="x:Boolean" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -533,8 +610,12 @@
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Trace" Message="[&quot;Attempting to log onto Okta with password: unable to click 'Verify' button&quot;]" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ThrowBusinessRuleException.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="Message">Unable to locate Verify button</InArgument>
-                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">False</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Message">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToClickVerify" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">
+                            <Literal x:TypeArguments="x:Boolean" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -562,7 +643,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenBrowser>
-    <TryCatch sap2010:Annotation.AnnotationText="Check to confirm that the login was successful" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,603" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+    <TryCatch sap2010:Annotation.AnnotationText="Check to confirm that the login was successful" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510,603" sap2010:WorkflowViewState.IdRef="TryCatch_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -600,8 +681,12 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Trace" Message="[&quot;Logging onto Okta: login was unsuccessful&quot;]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Throw a BusinessRuleException" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ThrowBusinessRuleException.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="Message">[String.Format("Login attempt using '{0}' credential failed. See screenshot for more information.", CredentialName)]</InArgument>
-                  <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">True</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Message">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToFindApps" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">
+                    <Literal x:TypeArguments="x:Boolean" Value="True" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -615,7 +700,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <Assign sap2010:Annotation.AnnotationText="Return a reference to the currently open browser for use by other activities" sap:VirtualizedContainerService.HintSize="514,102" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap2010:Annotation.AnnotationText="Return a reference to the currently open browser for use by other activities" sap:VirtualizedContainerService.HintSize="510,102" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:Browser">[ActiveBrowser]</OutArgument>
       </Assign.To>
@@ -629,7 +714,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="Return a positive success message" sap:VirtualizedContainerService.HintSize="514,91" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap2010:Annotation.AnnotationText="Return a positive success message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ProcessMessage]</OutArgument>
       </Assign.To>
