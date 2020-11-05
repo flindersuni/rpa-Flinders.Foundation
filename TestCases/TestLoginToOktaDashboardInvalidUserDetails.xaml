@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>654,723</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1752,922</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,7 +62,7 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Test the credential handling of the LoginToOktaDashboard activity" DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="634,663" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+  <Flowchart sap2010:Annotation.AnnotationText="Test the credential handling of the LoginToOktaDashboard activity" DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="634,667" sap2010:WorkflowViewState.IdRef="Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="An invalid user name (one that is not going to be found in Okta)" Name="invalidUserName" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="A password for the invalid user" Name="invalidPassword" />
@@ -89,7 +89,7 @@
           <av:Size x:Key="ShapeSize">200,93</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="Undertake the steps necessary to run this test" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="735,875" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch sap2010:Annotation.AnnotationText="Undertake the steps necessary to run this test" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="735,891" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,14 +97,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence sap2010:Annotation.AnnotationText="Initialise and run the test" sap:VirtualizedContainerService.HintSize="676,1524" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="Initialise and run the test" sap:VirtualizedContainerService.HintSize="676,1536" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="Initialise test Parameters" DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="634,702" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence sap2010:Annotation.AnnotationText="Initialise test Parameters" DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="634,706" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,7 +159,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:AddCredential>
             </Sequence>
-            <Flowchart sap2010:Annotation.AnnotationText="Execute Test Logic" DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="634,663" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+            <Flowchart sap2010:Annotation.AnnotationText="Execute Test Logic" DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="634,667" sap2010:WorkflowViewState.IdRef="Flowchart_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,7 +209,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap2010:Annotation.AnnotationText="Unexpected eceptions are caught here. Such exceptions indicate a test failure.&#xA;&#xA;Known exceptions must be of a more specific type, and be explicitly checked in tests designed to fail. " sap:VirtualizedContainerService.HintSize="284,354" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="Unexpected eceptions are caught here. Such exceptions indicate a test failure.&#xA;&#xA;Known exceptions must be of a more specific type, and be explicitly checked in tests designed to fail. " sap:VirtualizedContainerService.HintSize="304,354" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -235,7 +235,7 @@
               </Sequence>
             </ActivityAction>
           </Catch>
-          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="701,642" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="701,654" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,21 +246,21 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap2010:Annotation.AnnotationText="Confirm that a BusinessRuleException was thrown with the expected message" sap:VirtualizedContainerService.HintSize="695,573" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap2010:Annotation.AnnotationText="Confirm that a BusinessRuleException was thrown with the expected message" sap:VirtualizedContainerService.HintSize="695,585" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If sap2010:Annotation.AnnotationText="Does the message match our expectations?" Condition="[exception.Message.StartsWith(&quot;Login attempt using&quot;) AND exception.Message.EndsWith(&quot;credential failed. See screenshot for more information.&quot;)]" sap:VirtualizedContainerService.HintSize="653,454" sap2010:WorkflowViewState.IdRef="If_3">
+                <If sap2010:Annotation.AnnotationText="Does the message match our expectations?" Condition="[exception.Message.StartsWith(&quot;Login attempt using&quot;) AND exception.Message.EndsWith(&quot;credential failed. See screenshot for more information.&quot;)]" sap:VirtualizedContainerService.HintSize="653,462" sap2010:WorkflowViewState.IdRef="If_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap2010:Annotation.AnnotationText="Exception with expected message was thrown." sap:VirtualizedContainerService.HintSize="304,279" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Sequence sap2010:Annotation.AnnotationText="Exception with expected message was thrown." sap:VirtualizedContainerService.HintSize="304,283" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -286,7 +286,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap2010:Annotation.AnnotationText="Exception with a different message was thrown." sap:VirtualizedContainerService.HintSize="304,279" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence sap2010:Annotation.AnnotationText="Exception with a different message was thrown." sap:VirtualizedContainerService.HintSize="304,283" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

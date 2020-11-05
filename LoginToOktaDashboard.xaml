@@ -84,7 +84,7 @@
       <Variable x:TypeArguments="x:String" Name="errorUnableToClickNext" />
       <Variable x:TypeArguments="x:String" Name="errorUnableToEnterPassword" />
       <Variable x:TypeArguments="x:String" Name="errorUnableToClickVerify" />
-      <Variable x:TypeArguments="x:String" Name="errorUnableToFindApps" />
+      <Variable x:TypeArguments="x:String" Name="errorUnableToLogin" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -193,7 +193,7 @@
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
               <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[errorUnableToFindApps]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[errorUnableToLogin]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
                 <InArgument x:TypeArguments="x:String">[String.Format("Login attempt using '{0}' credential failed. See screenshot for more information.", CredentialName)]</InArgument>
@@ -682,7 +682,7 @@
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Throw a BusinessRuleException" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ThrowBusinessRuleException.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="Message">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToFindApps" />
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorUnableToLogin" />
                   </InArgument>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="TakeScreenshot">
                     <Literal x:TypeArguments="x:Boolean" Value="True" />
