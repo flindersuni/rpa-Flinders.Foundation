@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.30",
+  "projectVersion": "2.0.31",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -119,7 +119,7 @@
         "fileName": "TestThrowNotImplementedException.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "74d7b974-c0f1-47d5-8b32-c3d332b8707c",
         "fileName": "TestLoginToOktaDashboardInvalidCredential.xaml"
       }
