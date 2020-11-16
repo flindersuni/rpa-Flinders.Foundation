@@ -34,8 +34,7 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": [
-        "ConstantValues.xaml",
-        "ConstantValuesDist.xaml"
+        "ConstantValues.xaml"
       ]
     },
     "processOptions": {
