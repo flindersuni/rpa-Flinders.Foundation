@@ -34,27 +34,7 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": [
-        "TestTemplates/InvokeTestSuiteTemplate.xaml",
-        "TestTemplates/TestCaseTemplate.xaml",
-        "TestTemplates/TestRunner.xaml",
-        "TestFramework/BlankTestCase.xaml",
-        "TestFramework/InvokeTestCase.xaml",
-        "TestFramework/InvokeTestCategoryTestCases.xaml",
-        "TestFramework/TestRunner.xaml",
-        "TestCases/TestDetectEnvironmentDevelopment.xaml",
-        "TestCases/TestDetectEnvironmentProduction.xaml",
-        "TestCases/TestDetectEnvironmentTest.xaml",
-        "TestCases/TestLoginToOktaDashboardInvalidCredential.xaml",
-        "TestCases/TestLoginToOktaDashboardInvalidEnvironment.xaml",
-        "TestCases/TestLoginToOktaDashboardInvalidUserDetails.xaml",
-        "TestCases/TestLoginToOktaDashboardValidCredential.xaml",
-        "TestCases/TestTakeAndSaveScreenshot.xaml",
-        "TestCases/TestThrowBusinessRuleException.xaml",
-        "TestCases/TestThrowBusinessRuleExceptionWithScreenshot.xaml",
-        "TestCases/TestThrowConfigurationException.xaml",
-        "TestCases/TestThrowNotImplementedException.xaml",
         "ConstantValues.xaml",
-        "TestCases/TestGetCommonDataDirectory.xaml",
         "ConstantValuesDist.xaml"
       ]
     },
