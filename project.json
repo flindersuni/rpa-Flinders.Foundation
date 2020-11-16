@@ -43,77 +43,77 @@
       {
         "editingStatus": "Publishable",
         "testCaseId": "2d8739f6-a138-4695-8698-eb67c8c21122",
-        "fileName": "TestDetectEnvironmentDevelopment.xaml"
+        "fileName": "TestCases\\TestDetectEnvironmentDevelopment.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "42adf1cd-edd3-4e80-8628-d0d84d96f2cb",
-        "fileName": "TestDetectEnvironmentProduction.xaml"
+        "fileName": "TestCases\\TestDetectEnvironmentProduction.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "f4cbc293-c753-42ee-84bc-c51f3fcc5734",
-        "fileName": "TestDetectEnvironmentTest.xaml"
+        "fileName": "TestCases\\TestDetectEnvironmentTest.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "02a1724c-ae5c-4f78-88b5-3c2031cd3c55",
-        "fileName": "TestDetectEnvironmentInvalidName.xaml"
+        "fileName": "TestCases\\TestDetectEnvironmentInvalidName.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "055aa5c9-cae5-4525-ad0b-0b28ec68e7b7",
-        "fileName": "TestDetectEnvironmentInvalidValue.xaml"
+        "fileName": "TestCases\\TestDetectEnvironmentInvalidValue.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "35a20bd1-9d51-4608-ac25-823cc1b8a399",
-        "fileName": "TestGetCommonDataDirectory.xaml"
+        "fileName": "TestCases\\TestGetCommonDataDirectory.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "e3a2dfb4-2239-4d22-8e6f-1caecaeaaab7",
-        "fileName": "TestTakeAndSaveScreenshot.xaml"
+        "fileName": "TestCases\\TestTakeAndSaveScreenshot.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "106175f5-2978-4e05-bdf1-a3a1643d805e",
-        "fileName": "TestThrowBusinessRuleException.xaml"
+        "fileName": "TestCases\\TestThrowBusinessRuleException.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "efc6717d-5b6a-4dd5-a03e-2c8f2d1daee2",
-        "fileName": "TestThrowBusinessRuleExceptionWithScreenshot.xaml"
+        "fileName": "TestCases\\TestThrowBusinessRuleExceptionWithScreenshot.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "3b0624e0-2da6-437d-9149-7d0b12ac0138",
-        "fileName": "TestThrowConfigurationException.xaml"
+        "fileName": "TestCases\\TestThrowConfigurationException.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "7e800b62-2b69-4c2b-b3b7-ac5d6126084f",
-        "fileName": "TestThrowNotImplementedException.xaml"
+        "fileName": "TestCases\\TestThrowNotImplementedException.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "74d7b974-c0f1-47d5-8b32-c3d332b8707c",
-        "fileName": "TestLoginToOktaDashboardInvalidCredential.xaml"
+        "fileName": "TestCases\\TestLoginToOktaDashboardInvalidCredential.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "24d56afe-9108-435e-82ec-11c512274da1",
-        "fileName": "TestLoginToOktaDashboardInvalidUserDetails.xaml"
+        "fileName": "TestCases\\TestLoginToOktaDashboardInvalidUserDetails.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "4a871bea-66b3-415e-abdb-4a08ba766c72",
-        "fileName": "TestLoginToOktaDashboardInvalidEnvironment.xaml"
+        "fileName": "TestCases\\TestLoginToOktaDashboardInvalidEnvironment.xaml"
       },
       {
         "editingStatus": "Publishable",
         "testCaseId": "429a4ab6-268b-47c7-b389-6c97c736557a",
-        "fileName": "TestLoginToOktaDashboardValidCredential.xaml"
+        "fileName": "TestCases\\TestLoginToOktaDashboardValidCredential.xaml"
       }
     ],
     "modernBehavior": false

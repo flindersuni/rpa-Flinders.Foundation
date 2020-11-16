@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestDetectEnvironmentDevelopment" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1752,1304" sap2010:WorkflowViewState.IdRef="TestDetectEnvironmentDevelopment_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestDetectEnvironmentDevelopment" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1205,1329" sap2010:WorkflowViewState.IdRef="TestDetectEnvironmentDevelopment_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -56,7 +56,7 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestDetectEnvironmentDevelopment" sap:VirtualizedContainerService.HintSize="618,1139" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TestDetectEnvironmentDevelopment" sap:VirtualizedContainerService.HintSize="618,1164" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[Nothing]" Name="detectedEnvironment" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="validName" />
@@ -74,7 +74,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Initialise variables, making sure to set environment variable name to 'RPAEnvironment' and environment variable value to 'development'." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,248" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Initialise variables, making sure to set environment variable name to 'RPAEnvironment' and environment variable value to 'development'." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,248" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -118,13 +118,13 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="576,179" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="576,204" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DetectEnvironment workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DetectEnvironment.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DetectEnvironment workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DetectEnvironment.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="x:String" x:Key="DetectedEnvironment">[detectedEnvironment]</OutArgument>
           <OutArgument x:TypeArguments="x:Boolean" x:Key="ValidEnvironmentName">[validName]</OutArgument>
