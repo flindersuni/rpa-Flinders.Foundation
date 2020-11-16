@@ -33,7 +33,7 @@
     <x:Null />
   </mva:VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000370eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvRGV0ZWN0RW52aXJvbm1lbnQiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiRGV0ZWN0IFJQQSBFbnZpcm9ubWVudFx1MDAwYVx1MDAwYVRoaXMgYWN0aXZpdHkgZGV0ZXJtaW5lcyB0aGUgUlBBIGVudmlyb25tZW50IGluIGEgZGV0ZXJtaW5pc3RpYyBhbmQgcmVwZWF0YWJsZSB3YXkuIFRoZSBSUEEgZW52aXJvbm1lbnQgd2lsbCBiZSBvbmUgb2YgdGhlIGZvbGxvd2luZywgZGVwZW5kaW5nIG9uIHdoZXJlIHRoZSBib3QgaXMgcnVubmluZywgZGV2ZWxvcG1lbnQsIHRlc3Qgb3IgcHJvZHVjdGlvbi5cdTAwMGFcdTAwMGFUaGUgdmFsdWUgb2YgdGhlIGBSUEFFbnZpcm9ubWVudGAgZW52aXJvbm1lbnQgdmFyaWFibGUsIGlmIHByZXNlbnQgYW5kIHZhbGlkLCBpcyB1c2VkIGJ5IHRoaXMgYWN0aXZpdHkuIFx1MDAwYVx1MDAwYUlmIHRoZSBlbnZpcm9ubWVudCB2YXJpYWJsZSBpcyBub3QgcHJlc2VudCBvciBpcyBpbnZhbGlkLCB0aGUgZGVmYXVsdCBlbnZpcm9ubWVudCBvZiAnZGV2ZWxvcG1lbnQnIGlzIHJldHVybmVkLiIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1112,4286</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1205,3713</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DetectEnvironment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -86,7 +86,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Cryptography</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -94,7 +93,7 @@
       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Detect RPA Environment&#xA;&#xA;This activity determines the RPA environment in a deterministic and repeatable way. The RPA environment will be one of the following, depending on where the bot is running, development, test or production.&#xA;&#xA;The value of the `RPAEnvironment` environment variable, if present and valid, is used by this activity. &#xA;&#xA;If the environment variable is not present or is invalid, the default environment of 'development' is returned." DisplayName="DetectEnvironment" sap:VirtualizedContainerService.HintSize="1006,4121" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Detect RPA Environment&#xA;&#xA;This activity determines the RPA environment in a deterministic and repeatable way. The RPA environment will be one of the following, depending on the user that is running the bot, development, test or production." DisplayName="DetectEnvironment" sap:VirtualizedContainerService.HintSize="1002,3548" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The value of the 'RPAEnvironment' environment variable." Name="rpaEnvironment">
         <sap:WorkflowViewStateService.ViewState>
@@ -138,7 +137,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Get the name of the asset to obtain the value of the RPA environment variable from. If none was given externally use the default name of 'RPAEnvironment'." DisplayName="Sequence - Determine name of RPA environment variable" sap:VirtualizedContainerService.HintSize="964,939" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence sap2010:Annotation.AnnotationText="Get the name of the asset to obtain the value of the RPA environment variable from. If none was given externally use the default name of 'RPAEnvironment'." DisplayName="Sequence - Determine name of RPA environment variable" sap:VirtualizedContainerService.HintSize="960,939" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,7 +184,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:LogMessage sap2010:Annotation.AnnotationText="Log that no name for the RPA environment variable was passed in as an input argument and that the name of the RPA environment &#xD;&#xA;environment variable was set to the default value of 'RPAEnvironment'" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[String.Format( &quot;Determining name of RPA environment variable: no name for the RPA environment variable was provided as an argument into this process, setting the name to default value of '{0}'&quot;, environmentName)]">
+            <ui:LogMessage sap2010:Annotation.AnnotationText="Log that no name for the RPA environment variable was passed in as an input argument and that the name of the RPA environment &#xA;environment variable was set to the default value of 'RPAEnvironment'" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[String.Format( &quot;Determining name of RPA environment variable: no name for the RPA environment variable was provided as an argument into this process, setting the name to default value of '{0}'&quot;, environmentName)]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -205,7 +204,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Retrieve the value of the RPA environment variable from the asset with the given variable name in Orchestrator. This variable specifies which environment the automation is running in. It could be either 'production', 'development' or 'test'." DisplayName="Sequence - Determine value of RPA environment variable" sap:VirtualizedContainerService.HintSize="964,1466" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence sap2010:Annotation.AnnotationText="Retrieve the value of the RPA environment variable from the asset with the given variable name in Orchestrator. This variable specifies which environment the automation is running in. It could be either 'production', 'development' or 'test'." DisplayName="Sequence - Determine value of RPA environment variable" sap:VirtualizedContainerService.HintSize="960,1080" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,38 +212,21 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="Try to get the text value of the 'RPAEnvironment' asset from Orchestrator. If this does not work, presumably because the 'RPAEnvironment' asset does not exist on Orchestor, set the 'RPAEnvironment' environment variable to blank aka Nothing." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="516,1317" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch sap2010:Annotation.AnnotationText="Try to get the text value of the 'RPAEnvironment' asset from Orchestrator. If this does not work, presumably because the 'RPAEnvironment' asset does not exist on Orchestor, set the 'RPAEnvironment' environment variable to blank aka Nothing." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,931" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="478,1033" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence sap2010:Annotation.AnnotationText="Get the environment name from the Orchestrator asset." DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="486,647" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut sap2010:Annotation.AnnotationText="Replaced sequence of obtaining 'RPAEnvironment' variable from local environment variable with a process that obtains it from an Orchestrator asset. Retaining the original sequence for now, will probably remove it when committing changes." DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,282" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetEnvironmentVariable DisplayName="Get Environment Variable" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="[environmentName]" VariableValue="[rpaEnvironment]" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Trace" Message="[String.Format( &quot;Value of '{0}' environment variable is: '{1}'&quot;, environmentName, rpaEnvironment )]" />
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Attempt to retrieve the value of RPA environment variable from an asset, with the given name specified by environmentVariable, in Orchestrator" AssetName="[environmentName]" DisplayName="Assign" sap:VirtualizedContainerService.HintSize="436,124" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Attempt to retrieve the value of RPA environment variable from an asset, with the given name specified by environmentVariable, in Orchestrator" AssetName="[environmentName]" DisplayName="Assign" sap:VirtualizedContainerService.HintSize="444,179" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
               <ui:GetRobotAsset.Value>
                 <OutArgument x:TypeArguments="x:String">[rpaEnvironment]</OutArgument>
               </ui:GetRobotAsset.Value>
@@ -254,14 +236,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetRobotAsset>
-            <ui:LogMessage sap2010:Annotation.AnnotationText="Log the value of the RPA environment variable retrieved from the asset, with the given name specified byenvironmentVariable, in Orchestrator." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,148" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[String.Format( &quot;Determining value of RPA environment variable: retrieving '{0}' asset from Orchestrator returns '{1}'&quot;, environmentName, rpaEnvironment )]">
+            <ui:LogMessage sap2010:Annotation.AnnotationText="Log the value of the RPA environment variable retrieved from the asset, with the given name specified byenvironmentVariable, in Orchestrator." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="444,148" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[String.Format( &quot;Determining value of RPA environment variable: retrieving '{0}' asset from Orchestrator returns '{1}'&quot;, environmentName, rpaEnvironment )]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Assign sap2010:Annotation.AnnotationText="Flag that the name of the RPA environment variable corresponds to a valid asset in Orchestrator." DisplayName="Assign" sap:VirtualizedContainerService.HintSize="436,117" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <Assign sap2010:Annotation.AnnotationText="Flag that the name of the RPA environment variable corresponds to a valid asset in Orchestrator." DisplayName="Assign" sap:VirtualizedContainerService.HintSize="444,117" sap2010:WorkflowViewState.IdRef="Assign_10">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[ValidEnvironmentName]</OutArgument>
               </Assign.To>
@@ -277,7 +259,7 @@
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="482,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="490,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -288,13 +270,14 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="380,655" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence sap2010:Annotation.AnnotationText="Getting the asset from Orchestrator failed. Log the exception and set appropriate return values." DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="376,697" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MultipleAssign sap2010:Annotation.AnnotationText="Flag that no RPA environment variable was found, that the given variable name was invalid and that the variable value was invalid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                <ui:MultipleAssign sap2010:Annotation.AnnotationText="Flag that no RPA environment variable was found, that the given variable name was invalid and that the variable value was invalid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -329,14 +312,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:MultipleAssign>
-                <ui:LogMessage sap2010:Annotation.AnnotationText="Log that no asset with the name specified by environmentName was found in Orchestrator." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,133" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[String.Format( &quot;Determining value of RPA environment variable: no asset with the name '{0}' was found in Orchestrator, exception thrown:&quot;, environmentName )]">
+                <ui:LogMessage sap2010:Annotation.AnnotationText="Log that no asset with the name specified by environmentName was found in Orchestrator." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[String.Format( &quot;Determining value of RPA environment variable: no asset with the name '{0}' was found in Orchestrator, exception thrown:&quot;, environmentName )]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <ui:LogMessage sap2010:Annotation.AnnotationText="Log the exception thrown when trying to retrieve asset from Orchestrator." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,133" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[exception.ToString]">
+                <ui:LogMessage sap2010:Annotation.AnnotationText="Log the exception thrown when trying to retrieve asset from Orchestrator." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[exception.ToString]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -349,7 +332,7 @@
         </TryCatch.Catches>
       </TryCatch>
     </Sequence>
-    <Assign sap2010:Annotation.AnnotationText="Set the default value of the RPA environment variable to 'development'" DisplayName="Assign" sap:VirtualizedContainerService.HintSize="964,102" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap2010:Annotation.AnnotationText="Set the default value of the RPA environment variable to 'development'" DisplayName="Assign" sap:VirtualizedContainerService.HintSize="960,102" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[defaultEnvironment]</OutArgument>
       </Assign.To>
@@ -362,21 +345,21 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If sap2010:Annotation.AnnotationText="Check if a value for the RPA environmenet variable was found." Condition="[Information.IsNothing(rpaEnvironment)]" sap:VirtualizedContainerService.HintSize="964,1270" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Check if a value for the RPA environmenet variable was found." Condition="[Information.IsNothing(rpaEnvironment)]" sap:VirtualizedContainerService.HintSize="960,1143" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap2010:Annotation.AnnotationText="If no value for the RPA environment variable was found use the default value." sap:VirtualizedContainerService.HintSize="380,554" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap2010:Annotation.AnnotationText="If no value for the RPA environment variable was found use the default value." sap:VirtualizedContainerService.HintSize="376,554" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign sap2010:Annotation.AnnotationText="Set the value of the RPA environment variable to the default value, flag that the name of the RPA environment variable was invalid and that the value of the RPA environment variable was invalid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,232" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+          <ui:MultipleAssign sap2010:Annotation.AnnotationText="Set the value of the RPA environment variable to the default value, flag that the name of the RPA environment variable was invalid and that the value of the RPA environment variable was invalid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,232" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -411,7 +394,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:LogMessage sap2010:Annotation.AnnotationText="Log that no value for the RPA environment variable was able to be retrieved from Orchestrator and that the default value will be used instead." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: no value was retrieved from Orchestrator, setting value to the default of '{0}'&quot;, DetectedEnvironment)]">
+          <ui:LogMessage sap2010:Annotation.AnnotationText="Log that no value for the RPA environment variable was able to be retrieved from Orchestrator and that the default value will be used instead." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: no value was retrieved from Orchestrator, setting value to the default of '{0}'&quot;, DetectedEnvironment)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -421,7 +404,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap2010:Annotation.AnnotationText="Validate the value of the RPA environment variable retrieved from Orchestrator." sap:VirtualizedContainerService.HintSize="539,1091" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap2010:Annotation.AnnotationText="Validate the value of the RPA environment variable retrieved from Orchestrator." sap:VirtualizedContainerService.HintSize="539,964" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -441,7 +424,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Check the value of the RPA environment variable." DisplayName="Switch" Expression="[rpaEnvironment]" sap:VirtualizedContainerService.HintSize="497,826" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Check the value of the RPA environment variable." DisplayName="Switch" Expression="[rpaEnvironment]" sap:VirtualizedContainerService.HintSize="497,730" sap2010:WorkflowViewState.IdRef="Switch`1_1">
             <Switch.Default>
               <Sequence sap2010:Annotation.AnnotationText="If the value of the RPA environment variable is neither 'development', 'production' or 'test' then it is invalid. Set the value of the variable instead to the default value." sap:VirtualizedContainerService.HintSize="380,569" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
@@ -499,13 +482,14 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence x:Key="development" sap:VirtualizedContainerService.HintSize="380,440" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence x:Key="development" sap2010:Annotation.AnnotationText="Assign appropriate return values and log a trace message" sap:VirtualizedContainerService.HintSize="376,471" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Retain the validated value of the RPA environment variable and flag that both the name and value of the RPA environment variable are valid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Retain the validated value of the RPA environment variable and flag that both the name and value of the RPA environment variable are valid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -540,15 +524,16 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: a valid value was found, using value '{0}'&quot;, DetectedEnvironment)]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: a valid value was found, using value '{0}'&quot;, DetectedEnvironment)]" />
             </Sequence>
-            <Sequence x:Key="test" sap:VirtualizedContainerService.HintSize="380,440" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence x:Key="test" sap2010:Annotation.AnnotationText="Assign appropriate return values and log a trace message" sap:VirtualizedContainerService.HintSize="376,471" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Retain the validated value of the RPA environment variable and flag that both the name and value of the RPA environment variable are valid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Retain the validated value of the RPA environment variable and flag that both the name and value of the RPA environment variable are valid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
@@ -583,15 +568,16 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: a valid value was found, using value '{0}'&quot;, DetectedEnvironment)]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: a valid value was found, using value '{0}'&quot;, DetectedEnvironment)]" />
             </Sequence>
-            <Sequence x:Key="production" sap:VirtualizedContainerService.HintSize="380,440" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence x:Key="production" sap2010:Annotation.AnnotationText="Assign appropriate return values and log a trace message" sap:VirtualizedContainerService.HintSize="376,471" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Retain the validated value of the RPA environment variable and flag that both the name and value of the RPA environment variable are valid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Retain the validated value of the RPA environment variable and flag that both the name and value of the RPA environment variable are valid." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
@@ -626,7 +612,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: a valid value was found, using value '{0}'&quot;, DetectedEnvironment)]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[String.Format(&quot;Validating value of RPA environment variable: a valid value was found, using value '{0}'&quot;, DetectedEnvironment)]" />
             </Sequence>
           </Switch>
         </Sequence>
