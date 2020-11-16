@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestTakeAndSaveScreenshot" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1112,3120" sap2010:WorkflowViewState.IdRef="TestTakeAndSaveScreenshot_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestTakeAndSaveScreenshot" mva:VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF0000012CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvVGFrZUFuZFNhdmVTY3JlZW5zaG90IiwiPEluaXRpYWxUb29sdGlwPmtfX0JhY2tpbmdGaWVsZCI6IlRlc3QgdGhlIFRha2VBbmRTYXZlU2NyZWVuc2hvdCBhY3Rpdml0eSIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=" sap:VirtualizedContainerService.HintSize="1205,3304" sap2010:WorkflowViewState.IdRef="TestTakeAndSaveScreenshot_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>System.Activities</x:String>
@@ -51,34 +51,33 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Cryptography</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestTakeAndSaveScreenshot" sap:VirtualizedContainerService.HintSize="618,2915" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Test the TakeAndSaveScreenshot activity" DisplayName="TestTakeAndSaveScreenshot" sap:VirtualizedContainerService.HintSize="618,3139" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="commonDataDirectory" />
-      <Variable x:TypeArguments="x:String" Name="testScreenshotFolder" />
-      <Variable x:TypeArguments="x:Boolean" Name="assertResult" />
-      <Variable x:TypeArguments="x:String" Name="testScreenshotFileName" />
-      <Variable x:TypeArguments="x:String" Name="assertMessage" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The path to the dected common data directory" Name="commonDataDirectory" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The path to the folder where the screenshot will be saved" Name="testScreenshotFolder" />
+      <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="The result argument returned by the activity" Name="testResult" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The path to the screenshot file" Name="testScreenshotFileName" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The message returned from the activity" Name="testMessage" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="576,363" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Setup the test" DisplayName="... Given" sap:VirtualizedContainerService.HintSize="576,419" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Run the process to obtain the RPA data directory and save the result in 'commonDataDirectory'." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GetCommonDataDirectory.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Run the process to obtain the RPA data directory and save the result in 'commonDataDirectory'." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GetCommonDataDirectory.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:String" x:Key="CommonDataDirectory">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="commonDataDirectory" />
-          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="CommonDataDirectory">[commonDataDirectory]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -100,26 +99,21 @@
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="576,2227" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap2010:Annotation.AnnotationText="Run the test" DisplayName="... When" sap:VirtualizedContainerService.HintSize="576,2333" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Testing 'TakeAndSaveScreenshot': testing with default input arguments&quot;]" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Test the process to take screenshots using default input arguments." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,129" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TakeAndSaveScreenshot.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Test the process to take screenshots using default input arguments." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TakeAndSaveScreenshot.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="OutputFolder" />
           <InArgument x:TypeArguments="x:String" x:Key="OutputFileName" />
-          <OutArgument x:TypeArguments="x:String" x:Key="ProcessMessage">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="assertMessage" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:Boolean" x:Key="ProcessSuccessful">
-            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="assertResult" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="ScreenshotFilePath">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="testScreenshotFileName" />
-          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="ProcessMessage">[testMessage]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="ProcessSuccessful">[testResult]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="ScreenshotFilePath">[testScreenshotFileName]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -127,7 +121,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <If sap2010:Annotation.AnnotationText="If a screenshot was successfuly taken then delete the screenshot file and continue with further testing. Otherwise throw an exception." Condition="[assertResult = True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_1">
+      <If sap2010:Annotation.AnnotationText="If a screenshot was successfuly taken then delete the screenshot file and continue with further testing. Otherwise throw an exception." Condition="[testResult = True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -143,7 +137,7 @@
           </ui:Delete>
         </If.Then>
         <If.Else>
-          <Throw sap2010:Annotation.AnnotationText="Throw an exception as a away to halt testing." Exception="[new Exception(String.Format(&quot;Assertion failed. Message '{0}'&quot;, assertMessage))]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_1">
+          <Throw sap2010:Annotation.AnnotationText="Throw an exception as a away to halt testing." Exception="[new Exception(String.Format(&quot;Assertion failed. Message '{0}'&quot;, testMessage))]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -154,21 +148,13 @@
       </If>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Testing 'TakeAndSaveScreenshot': successfully tested with default input arguments&quot;]" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Testing 'TakeAndSaveScreenshot': testing with given filename&quot;]" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Test the process to take screenshots using a given filename in the default directory." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,129" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TakeAndSaveScreenshot.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Test the process to take screenshots using a given filename in the default directory." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TakeAndSaveScreenshot.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="OutputFolder" />
-          <InArgument x:TypeArguments="x:String" x:Key="OutputFileName">
-            <Literal x:TypeArguments="x:String">test-screenshot.png</Literal>
-          </InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="ProcessMessage">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="assertMessage" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:Boolean" x:Key="ProcessSuccessful">
-            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="assertResult" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="ScreenshotFilePath">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="testScreenshotFileName" />
-          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OutputFileName">test-screenshot.png</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="ProcessMessage">[testMessage]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="ProcessSuccessful">[testResult]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="ScreenshotFilePath">[testScreenshotFileName]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -176,7 +162,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <If sap2010:Annotation.AnnotationText="If a screenshot was successfuly taken then delete the screenshot file and continue with further testing. Otherwise throw an exception." Condition="[assertResult = True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_2">
+      <If sap2010:Annotation.AnnotationText="If a screenshot was successfuly taken then delete the screenshot file and continue with further testing. Otherwise throw an exception." Condition="[testResult = True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -192,7 +178,7 @@
           </ui:Delete>
         </If.Then>
         <If.Else>
-          <Throw sap2010:Annotation.AnnotationText="Throw an exception as a away to halt testing." Exception="[new Exception(String.Format(&quot;Assertion failed. Message '{0}'&quot;, assertMessage))]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_2">
+          <Throw sap2010:Annotation.AnnotationText="Throw an exception as a away to halt testing." Exception="[new Exception(String.Format(&quot;Assertion failed. Message '{0}'&quot;, testMessage))]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -203,23 +189,13 @@
       </If>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Testing 'TakeAndSaveScreenshot': successfully tested with given filename&quot;]" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Testing 'TakeAndSaveScreenshot': testing with given filename and screenshots sub-directory of RPA data directory&quot;]" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Test the process to take screenshots using a given filename in the sub-directory of the RPA data directory." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,129" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TakeAndSaveScreenshot.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Test the process to take screenshots using a given filename in the sub-directory of the RPA data directory." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TakeAndSaveScreenshot.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="OutputFolder">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="testScreenshotFolder" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="OutputFileName">
-            <Literal x:TypeArguments="x:String">test-screenshot.png</Literal>
-          </InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="ProcessMessage">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="assertMessage" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:Boolean" x:Key="ProcessSuccessful">
-            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="assertResult" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="ScreenshotFilePath">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="testScreenshotFileName" />
-          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OutputFolder">[testScreenshotFolder]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OutputFileName">test-screenshot.png</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="ProcessMessage">[testMessage]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="ProcessSuccessful">[testResult]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="ScreenshotFilePath">[testScreenshotFileName]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -227,7 +203,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <If sap2010:Annotation.AnnotationText="If a screenshot was successfuly taken then delete the screenshot file and continue with further testing. Otherwise throw an exception." Condition="[assertResult = True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_3">
+      <If sap2010:Annotation.AnnotationText="If a screenshot was successfuly taken then delete the screenshot file and continue with further testing. Otherwise throw an exception." Condition="[testResult = True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -243,7 +219,7 @@
           </ui:Delete>
         </If.Then>
         <If.Else>
-          <Throw sap2010:Annotation.AnnotationText="Throw an exception as a away to halt testing." Exception="[new Exception(String.Format(&quot;Assertion failed. Message '{0}'&quot;, assertMessage))]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_3">
+          <Throw sap2010:Annotation.AnnotationText="Throw an exception as a away to halt testing." Exception="[new Exception(String.Format(&quot;Assertion failed. Message '{0}'&quot;, testMessage))]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -254,13 +230,14 @@
       </If>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Testing 'TakeAndSaveScreenshot': successfully tested with given filename and screenshots sub-directory of RPA data directory&quot;]" />
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="576,153" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="Verify the test result" DisplayName="... Then" sap:VirtualizedContainerService.HintSize="576,184" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" Expression="[assertResult = True]" sap:VirtualizedContainerService.HintSize="534,61" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" Expression="[testResult = True]" sap:VirtualizedContainerService.HintSize="534,61" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
     </Sequence>
   </Sequence>
 </Activity>
