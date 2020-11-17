@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestLoginToOktaDashboardInvalidCredential" mva:VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF0000017CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvTG9naW5Ub09rdGFEYXNoYm9hcmQiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiVGVzdCBsb2dnaW5nIGludG8gT2t0YSB3aXRoIGEgY3JlZGVudGlhbCBhc3NldCB0aGF0IGNhbiBiZSBmb3VuZCwgYnV0IGNvbnRhaW5zIGludmFsaWQgdXNlciBkZXRhaWxzIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==" sap:VirtualizedContainerService.HintSize="1205,1434" sap2010:WorkflowViewState.IdRef="TestLoginToOktaDashboardInvalidCredential_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Configuration;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestLoginToOktaDashboardInvalidCredential" mva:VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF0000017CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuRm91bmRhdGlvblwvd2lraVwvTG9naW5Ub09rdGFEYXNoYm9hcmQiLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiVGVzdCBsb2dnaW5nIGludG8gT2t0YSB3aXRoIGEgY3JlZGVudGlhbCBhc3NldCB0aGF0IGNhbiBiZSBmb3VuZCwgYnV0IGNvbnRhaW5zIGludmFsaWQgdXNlciBkZXRhaWxzIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==" sap:VirtualizedContainerService.HintSize="979,1633" sap2010:WorkflowViewState.IdRef="TestLoginToOktaDashboardInvalidCredential_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Configuration;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
@@ -54,7 +54,7 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Test logging into Okta with a credential asset that can be found, but contains invalid user details" DisplayName="TestLoginToOktaDashboardInvalidUserDetails" sap:VirtualizedContainerService.HintSize="618,1269" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Test logging into Okta with a credential asset that can be found, but contains invalid user details" DisplayName="TestLoginToOktaDashboardInvalidUserDetails" sap:VirtualizedContainerService.HintSize="618,1428" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="The result value returned by the LoginToOktaDashboard activity" Name="testResult" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Name of the credential asset in Orchestrator to use for this test." Name="testCredentialAsset" />
@@ -122,14 +122,14 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Run the test" DisplayName="... When" sap:VirtualizedContainerService.HintSize="576,537" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap2010:Annotation.AnnotationText="Run the test" DisplayName="... When" sap:VirtualizedContainerService.HintSize="576,696" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="Invoke the workflow and capture the exception for further analysis" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,414" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch sap2010:Annotation.AnnotationText="Invoke the workflow and capture the exception for further analysis" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,573" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -266,6 +266,33 @@
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
+        <TryCatch.Finally>
+          <Sequence sap2010:Annotation.AnnotationText="Cleanup the resources used by this test" sap:VirtualizedContainerService.HintSize="376,271" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:CloseApplication sap2010:Annotation.AnnotationText="Try to close the Internet Explorer application so that test runs don't conflict" ContinueOnError="True" DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+              <ui:CloseApplication.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54cb3574-c3d3-45b3-a398-d7e83614e58a" InformativeScreenshot="24aeb4293741b35e5f55a6ea0b1fada3" Selector="&lt;wnd app='iexplore.exe' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:CloseApplication.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CloseApplication>
+          </Sequence>
+        </TryCatch.Finally>
       </TryCatch>
     </Sequence>
     <Sequence sap2010:Annotation.AnnotationText="Verify the results of running the test" DisplayName="... Then" sap:VirtualizedContainerService.HintSize="576,184" sap2010:WorkflowViewState.IdRef="Sequence_4">
