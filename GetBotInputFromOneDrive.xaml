@@ -1,15 +1,17 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetBotInputFromOneDrive" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:usal="clr-namespace:UiPathTeam.SharePoint.Activities.Libraries;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetBotInputFromOneDrive" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucat="clr-namespace:UiPath.Core.Activities.TextModifications;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:usal="clr-namespace:UiPathTeam.SharePoint.Activities.Libraries;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="The name of the Windows Credential that contains the username and password to use to login to Okta." Name="CredentialName" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="A flag indicating if this workflow completed successfully or not." Name="ProcessSuccessful" Type="OutArgument(x:Boolean)" />
     <x:Property sap2010:Annotation.AnnotationText="A message with information about the status of the workflow after it completes." Name="ProcessMessage" Type="OutArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="The remote folder on OneDrive where the files to download are stored" Name="RemoteFolder" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="The path to the local folder, under the common data directory, where the files will be downloaded to" Name="LocalFolder" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Number of files downloaded from OneDrive" Name="FilesDownloaded" Type="OutArgument(x:Int32)" />
+    <x:Property sap2010:Annotation.AnnotationText="Full path to the folder where files were downloaded" Name="LocalFolderFullPath" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979,2878</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1072,4579</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetBotInputFromOneDrive_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -47,6 +49,9 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPathTeam.SharePoint.Activities.Lists</x:String>
       <x:String>UiPathTeam.SharePoint.Activities.Libraries</x:String>
+      <x:String>System.Web</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -82,9 +87,14 @@
       <AssemblyReference>Microsoft.SharePoint.Client.Runtime</AssemblyReference>
       <AssemblyReference>Microsoft.SharePoint.Client</AssemblyReference>
       <AssemblyReference>UiPathTeam.SharePoint.Activities</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Download files from the BotInput directory on OneDrive into a subfolder under the common data directory" DisplayName="GetBotInputFromOneDrive" sap:VirtualizedContainerService.HintSize="480,2713" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Download files from the BotInput directory on OneDrive into a subfolder under the common data directory" DisplayName="GetBotInputFromOneDrive" sap:VirtualizedContainerService.HintSize="743,4414" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The full URL to the DataTransfer folder on OneDrive" Name="sharePointSiteUrl" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The username used to authenticate to OneDrive" Name="username" />
@@ -95,6 +105,8 @@
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Full path to the remote parent folder" Name="remoteParentFolderPath" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Full path to the remote folder path, including the standard parent and supplied path fragment" Name="remoteFolderPath" />
       <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="An array of remote files to download" Name="remoteFolderItems" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="A warning message used when no files were available for download" Name="warningNoFilesToDownload" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The full URL to the remote file to download" Name="remoteFile" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -102,35 +114,95 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Initialise variables and format arguments prior to process execution" sap:VirtualizedContainerService.HintSize="438,427" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Initialise variables and format arguments prior to process execution" sap:VirtualizedContainerService.HintSize="701,2152" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="Validate the incoming arguments" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch sap2010:Annotation.AnnotationText="Validate the incoming arguments" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="659,1736" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap:VirtualizedContainerService.HintSize="621,1478" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CheckFalse DisplayName="Check False" ErrorMessage="CredentialName" Expression="[String.IsNullOrWhiteSpace(CredentialName)]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
-            <ui:CheckFalse DisplayName="Check False" ErrorMessage="RemoteFolder" Expression="[String.IsNullOrWhiteSpace(RemoteFolder)]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="CheckFalse_2" />
-            <ui:CheckFalse DisplayName="Check False" ErrorMessage="LocalFolder" Expression="[String.IsNullOrWhiteSpace(LocalFolder)]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="CheckFalse_3" />
+            <ui:CheckFalse sap2010:Annotation.AnnotationText="Make sure the credential name argument is supplied" DisplayName="Check False" ErrorMessage="CredentialName" Expression="[String.IsNullOrWhiteSpace(CredentialName)]" sap:VirtualizedContainerService.HintSize="579,118" sap2010:WorkflowViewState.IdRef="CheckFalse_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CheckFalse>
+            <ui:CheckFalse sap2010:Annotation.AnnotationText="Make sure the remote folder argument is supplied" DisplayName="Check False" ErrorMessage="RemoteFolder" Expression="[String.IsNullOrWhiteSpace(RemoteFolder)]" sap:VirtualizedContainerService.HintSize="579,118" sap2010:WorkflowViewState.IdRef="CheckFalse_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CheckFalse>
+            <ui:CheckFalse sap2010:Annotation.AnnotationText="Make sure the local folder argument is supplied" DisplayName="Check False" ErrorMessage="LocalFolder" Expression="[String.IsNullOrWhiteSpace(LocalFolder)]" sap:VirtualizedContainerService.HintSize="579,118" sap2010:WorkflowViewState.IdRef="CheckFalse_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CheckFalse>
+            <ui:ModifyText sap2010:Annotation.AnnotationText="Make sure the remote folder is in a valid format" DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="579,371" sap2010:WorkflowViewState.IdRef="ModifyText_1" OutputText="[RemoteFolder]" SourceText="[RemoteFolder]">
+              <ui:ModifyText.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="382,147" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_1" ReplaceText="/" SearchText="\" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ModifyText.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ModifyText>
+            <If sap2010:Annotation.AnnotationText="Make sure the remote folder path ends in a forward slash" Condition="[remoteFolder.EndsWith(&quot;/&quot;) = False]" sap:VirtualizedContainerService.HintSize="579,501" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="ModifyText_2" OutputText="[RemoteFolder]" SourceText="[RemoteFolder]">
+                  <ui:ModifyText.Body>
+                    <ActivityAction>
+                      <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ucat:CombineTextModification DisplayName="Combine text" sap:VirtualizedContainerService.HintSize="382,129" sap2010:WorkflowViewState.IdRef="CombineTextModification_1" InsertionSide="After" NewText="/" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ModifyText.Body>
+                </ui:ModifyText>
+              </If.Then>
+            </If>
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="625,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -143,18 +215,16 @@
               </ActivityAction.Argument>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ThrowConfigurationException.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="Message">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;Argument validation failed. Argument is required: {0}&quot;, exception.Message)" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Message">[String.Format("Argument validation failed. Argument is required: {0}", exception.Message)]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="659,253" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">[sharePointSiteUrl]</OutArgument>
@@ -179,11 +249,35 @@
                 <InArgument x:TypeArguments="x:String">/Shared Documents/General/DataTransfer/</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Boolean">[ProcessSuccessful]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[ProcessMessage]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">Un unexpected error has occurred: {0}</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[warningNoFilesToDownload]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">No fies were found in the '{0} folder on OneDrive</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
     </Sequence>
-    <TryCatch sap2010:Annotation.AnnotationText="Try to get the specified credential" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,587" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="Try to get the specified credential" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="701,587" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -231,9 +325,7 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[String.Format(errorInvalidCredentialAsset, CredentialName, &quot;&quot;)]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Throw a ConfigurationException" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ThrowConfigurationException.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="Message">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(errorInvalidCredentialAsset, CredentialName, exception.Message)" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Message">[String.Format(errorInvalidCredentialAsset, CredentialName, exception.Message)]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -247,7 +339,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <Sequence sap2010:Annotation.AnnotationText="Determine the path to the local download folder" sap:VirtualizedContainerService.HintSize="438,587" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap2010:Annotation.AnnotationText="Determine the path to the local download folder" sap:VirtualizedContainerService.HintSize="701,627" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -257,9 +349,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="GetCommonDataDirectory.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:String" x:Key="CommonDataDirectory">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="commonDataDirectory" />
-          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="CommonDataDirectory">[commonDataDirectory]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -270,10 +360,10 @@
           <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(commonDataDirectory, LocalFolder)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: will download files to this folder: {0}&quot;, downloadFolderPath)]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: will download files to this folder: {0}&quot;, downloadFolderPath)]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -286,7 +376,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CreateDirectory>
     </Sequence>
-    <Assign sap2010:Annotation.AnnotationText="Build the path to the remote folder" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Build the path to the remote folder" sap:VirtualizedContainerService.HintSize="701,91" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[remoteFolderPath]</OutArgument>
       </Assign.To>
@@ -299,30 +389,212 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <usa:SharepointApplicationScope ClientContext="{x:Null}" LoginTimeout="{x:Null}" Password="{x:Null}" sap2010:Annotation.AnnotationText="Connect to the SharePoint site (remote OneDrive folder)" DisplayName="Sharepoint application scope" sap:VirtualizedContainerService.HintSize="438,727" sap2010:WorkflowViewState.IdRef="SharepointApplicationScope_1" QueryGrouping="False" ResetCredentials="False" SecurePassword="[password]" SharePointInstanceType="Online" URL="[sharePointSiteUrl]" UserName="[String.Format(&quot;{0}@flinders.edu.au&quot;, username)]">
-      <usa:SharepointApplicationScope.Body>
-        <ActivityAction x:TypeArguments="us:SharePointContextInfo">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="us:SharePointContextInfo" Name="SharePointContextInfoTag" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,555" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: successfully connected to SharePoint as user: {0}&quot;, username)]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: looking for files to download in: {0}&quot;, remoteFolderPath)]" />
-            <usal:GetChildrenNames AttachmentsAction="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" ChildrenNames="[remoteFolderItems]" ChooseFile="False" DisplayName="Get children names" sap:VirtualizedContainerService.HintSize="334,70" sap2010:WorkflowViewState.IdRef="GetChildrenNames_1" RelativeUrl="[remoteFolderPath]" ShowAttachFiles="False" ShowCAMLQuery="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="False" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="False" ShowRelativeUrl="True" ShowRename="False" ShowUserName="False" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[String.Format(&quot;Folders items: {0}&quot;, String.join(&quot;|&quot;, remoteFolderItems))]" />
-          </Sequence>
-        </ActivityAction>
-      </usa:SharepointApplicationScope.Body>
+    <TryCatch sap2010:Annotation.AnnotationText="Try to download all of the files from OneDrive to a local folder" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="701,674" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </usa:SharepointApplicationScope>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,416" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <usa:SharepointApplicationScope ClientContext="{x:Null}" LoginTimeout="{x:Null}" Password="{x:Null}" sap2010:Annotation.AnnotationText="Connect to the SharePoint site (remote OneDrive folder)" DisplayName="Sharepoint application scope" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="SharepointApplicationScope_1" QueryGrouping="False" ResetCredentials="False" SecurePassword="[password]" SharePointInstanceType="Online" URL="[sharePointSiteUrl]" UserName="[String.Format(&quot;{0}@flinders.edu.au&quot;, username)]">
+            <usa:SharepointApplicationScope.Body>
+              <ActivityAction x:TypeArguments="us:SharePointContextInfo">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="us:SharePointContextInfo" Name="SharePointContextInfoTag" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="917,1296" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: successfully connected to SharePoint as user: {0}&quot;, username)]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: looking for files to download in: {0}&quot;, remoteFolderPath)]" />
+                  <usal:GetChildrenNames AttachmentsAction="{x:Null}" LocalPathHintText="{x:Null}" RelativeUrlHintText="{x:Null}" ChildrenNames="[remoteFolderItems]" ChooseFile="False" DisplayName="Get children names" sap:VirtualizedContainerService.HintSize="875,70" sap2010:WorkflowViewState.IdRef="GetChildrenNames_1" RelativeUrl="[remoteFolderPath]" ShowAttachFiles="False" ShowCAMLQuery="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="False" ShowLocalPath="False" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="False" ShowRelativeUrl="True" ShowRename="False" ShowUserName="False" />
+                  <If Condition="[remoteFolderItems.length &gt; 0]" sap:VirtualizedContainerService.HintSize="875,832" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap2010:Annotation.AnnotationText="There is at least one file to download" sap:VirtualizedContainerService.HintSize="454,684" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,561" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[remoteFolderItems]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="x:String">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,427" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[remoteFile]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[String.Format("{0}{1}",remoteFolderPath, item)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[String.Format(&quot;GetBotInputFromOneDrive: attempting to download: {0}&quot;, remoteFile)]" />
+                                <usal:GetFile AttachmentsAction="{x:Null}" RelativeUrlHintText="{x:Null}" ChooseFile="False" DisplayName="Get file" sap:VirtualizedContainerService.HintSize="334,104" sap2010:WorkflowViewState.IdRef="GetFile_1" LocalPath="[downloadFolderPath]" LocalPathHintText="Local path where the file will be saved" RelativeUrl="[remoteFile]" ShowAttachFiles="False" ShowCAMLQuery="False" ShowGroupDescription="False" ShowGroupName="False" ShowLibraryName="False" ShowListName="False" ShowLocalPath="True" ShowMove="False" ShowPermissionDropdown="False" ShowPropertiesDictionary="False" ShowRelativeUrl="True" ShowRename="False" ShowUserName="False" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                        </ui:ForEach>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:Annotation.AnnotationText="No files are available for download so nothing to do" sap:VirtualizedContainerService.HintSize="376,414" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[warningNoFilesToDownload]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[String.Format(warningNoFilesToDownload, remoteFolderPath)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[ProcessMessage]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[warningNoFilesToDownload]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[warningNoFilesToDownload]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </usa:SharepointApplicationScope.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </usa:SharepointApplicationScope>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[ProcessSuccessful]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[ProcessMessage]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[String.Format("Successfully downloaded {0} files", remoteFolderItems.Length)]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Int32">[FilesDownloaded]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Int32">[remoteFolderItems.Length]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[LocalFolderFullPath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[downloadFolderPath]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap2010:Annotation.AnnotationText="Log the exception message and return false to the calling activity signalling failure." sap:VirtualizedContainerService.HintSize="376,456" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[ProcessSuccessful]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[ProcessMessage]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[String.Format(ProcessMessage, exception.Message)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Int32">[FilesDownloaded]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[LocalFolderFullPath]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[ProcessMessage]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>
