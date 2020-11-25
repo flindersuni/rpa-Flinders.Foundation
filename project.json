@@ -114,6 +114,11 @@
         "editingStatus": "Publishable",
         "testCaseId": "429a4ab6-268b-47c7-b389-6c97c736557a",
         "fileName": "TestCases\\TestLoginToOktaDashboardValidCredential.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "22121164-7f91-42cf-a957-137c2471a321",
+        "fileName": "TestCases\\TestGetBotInputFromOneDrive.xaml"
       }
     ],
     "modernBehavior": false
