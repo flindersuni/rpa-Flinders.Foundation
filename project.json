@@ -3,11 +3,11 @@
   "description": "A library of foundational activities used across all UiPath projects at Flinders University",
   "main": "InvokeTestSuite.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.9.3]",
-    "UiPath.Mail.Activities": "[1.9.3]",
-    "UiPath.System.Activities": "[20.10.1]",
-    "UiPath.Testing.Activities": "1.2.4",
-    "UiPath.UIAutomation.Activities": "[20.10.6]"
+    "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.Mail.Activities": "[1.10.4]",
+    "UiPath.System.Activities": "[21.4.1]",
+    "UiPath.Testing.Activities": "1.3.3",
+    "UiPath.UIAutomation.Activities": "[21.4.4]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -121,5 +121,6 @@
   "expressionLanguage": "VisualBasic",
   "isTemplate": false,
   "templateProjectData": {},
-  "publishData": {}
+  "publishData": {},
+  "targetFramework": "Legacy"
 }
